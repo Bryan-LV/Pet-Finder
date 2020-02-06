@@ -1,0 +1,21 @@
+{
+  "name": "pet-one-project",
+  "version": "1.0.0",
+  "description": "Users can search through Pet finders API to find an animal to adopt",
+  "main": "server.js",
+  "scripts": {
+    "client": "npm start --prefix client",
+    "server": "nodemon server",
+    "dev": "concurrently \"npm run client\" \"npm run server\""
+  },
+  "author": "bryan almaraz",
+  "license": "ISC",
+  "dependencies": {
+    "@petfinder/petfinder-js": "^1.0.6",
+    "axios": "^0.19.2",
+    "concurrently": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
