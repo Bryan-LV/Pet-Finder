@@ -158,19 +158,14 @@ img{
 .search__inner-container{
   position: relative;
   z-index: 10;
+  max-width: 800px;
 }
 
 .search__form{
   width:100%;
 }
 
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-  margin: auto;
-  place-items: center;
-}
+
 
 .attributes{
   place-self: flex-start;
@@ -192,6 +187,7 @@ img{
 
 .loader{
   width:100%;
+  text-align: center;
 }
 
 .footer{
@@ -203,4 +199,48 @@ img{
   margin:0;
   text-align: center;
   padding:12px;
+}
+
+.search-results-container{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+}
+
+.filter-col{
+  width:90%;
+  box-shadow: var(--boxshadow);
+  border-radius: 4px;
+  height:100%;
+  margin-top: 15px;
+  padding-left: 10px;
+}
+
+@media (min-width:700px){
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin: auto;
+    place-items: baseline;
+  }
+
+  .search-results-container{
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .filter-col{
+    width:20%;
+    min-height: 100vh;
+  }
+}
+
+@media (min-width:1000px){
+  .three-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

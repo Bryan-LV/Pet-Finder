@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import { AlertContext } from '../../context/AlertContext'
+import {AlertMsg} from '../../styles'
 
 export default function Alert() {
   const {error} = useContext(AlertContext);
   return (
     <div>
-      <h3>{error}</h3>
+      {error ? <AlertMsg>{error}</AlertMsg> : null}
     </div>
   )
 }

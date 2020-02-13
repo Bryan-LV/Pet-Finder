@@ -21,7 +21,7 @@ function Animal(props) {
         </CardTop>
         
         <CardBottom>
-          <Title>{props.name}</Title>
+          <h3>{props.name}</h3>
           <Description>{description}</Description>
           <div className="two-col">
             <div className="attributes">

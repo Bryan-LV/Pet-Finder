@@ -73,3 +73,10 @@ export const Description = styled.p`
 export const Italics = styled.p`
   font-style:italic;
 `
+
+export const AlertMsg = styled.h3`
+  width:100%;
+  text-align:center;
+  background-color: red;
+  color:white;
+`

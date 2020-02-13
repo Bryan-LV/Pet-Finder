@@ -15,20 +15,20 @@ export default function SearchResults({history, match}) {
   })
 
   const setAnimals =  async () => {
-    try {
-      const request = await Axios.post('http://localhost:5000/animalresult', {location, type: match.params.animaltype  })
-      const response = request.data;
-      setState({animals: response, loading:false});
-
-    } catch (error) {
-      // create Alert error
-      setAlert(error.response.data.msg);
-      setState({...state, loading:false});
-      setTimeout(() => {
-        history.push('/');
-        clearAlert()
-      }, 3000);
-    }
+      try {
+        const request = await Axios.post('http://localhost:5000/animalresult', {location, type: match.params.animaltype  })
+        const response = request.data;
+        setState({animals: response, loading:false});
+  
+      } catch (error) {
+        // create Alert error
+        setAlert(error.response.data.msg);
+        setState({...state, loading:false});
+        setTimeout(() => {
+          history.push('/');
+          clearAlert()
+        }, 3000);
+      }
   }
   
 
@@ -36,8 +36,6 @@ export default function SearchResults({history, match}) {
     if(location === ''){
       history.push('/');
     } else{
-
-      // request animals list
       setAnimals()
     }
   }, [])
@@ -55,7 +53,14 @@ export default function SearchResults({history, match}) {
 
   return (
     <div className="container">
-      {state.loading ? <Loader /> : createAnimalResults()}
+      {state.loading ? <Loader /> : (
+        <div className="search-results-container">
+          <div className="filter-col">
+            <h3>Filter</h3>
+          </div>
+          <div className="two-col three-col"> {createAnimalResults()} </div>
+        </div>
+      )}
     </div>
   )
 }
