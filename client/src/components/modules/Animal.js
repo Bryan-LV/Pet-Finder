@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import { Title, Button, Card, CardTop, CardBottom, Description, Italics } from '../../styles'
 
 function Animal(props) {
-
+  const lowercaseName = props.name.toLowerCase();
+  const name = lowercaseName.charAt(0).toUpperCase() + lowercaseName.slice(1);
   const description = props.description ? props.description : 'Looks like this cutie is too new to the shelter to have a description yet..'; 
   const image = props.img[0] ? props.img[0].medium : 'https://ae01.alicdn.com/kf/HTB1KGW0mxrI8KJjy0Fpq6z5hVXat/ins-hot-Cute-Funny-Cute-Pet-Costume-Cosplay-Lion-Mane-Wig-Cap-Hat-for-Cat-Halloween.jpg';
 
@@ -21,7 +22,7 @@ function Animal(props) {
         </CardTop>
         
         <CardBottom>
-          <h3>{props.name}</h3>
+          <h3>{name}</h3>
           <Description>{description}</Description>
           <div className="two-col">
             <div className="attributes">

@@ -5,6 +5,7 @@ import Animal from '../modules/Animal';
 import Loader from '../modules/Loader';
 import Axios from 'axios';
 import { AlertContext } from '../../context/AlertContext';
+import Filter from '../modules/Filter';
 
 export default function SearchResults({history, match}) {
   const {location} = useContext(UserContext);
@@ -56,7 +57,7 @@ export default function SearchResults({history, match}) {
       {state.loading ? <Loader /> : (
         <div className="search-results-container">
           <div className="filter-col">
-            <h3>Filter</h3>
+            <Filter/>
           </div>
           <div className="two-col three-col"> {createAnimalResults()} </div>
         </div>
