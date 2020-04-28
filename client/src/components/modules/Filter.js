@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 
-export default function Filter(props) {
+export default function Filter({ animals }) {
   const [gender, setGender] = useState('');
-  
+  const breeds = [...new Set(animals.map(animal => animal.breeds.primary))];
   const handleClick = (e) => {
-    console.log();
     setGender(e.target.value);
   }
-  
+
 
   return (
     <div>

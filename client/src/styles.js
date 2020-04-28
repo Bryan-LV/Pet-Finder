@@ -28,8 +28,8 @@ export const Input = styled.input`
 export const Button = styled.button`
   width:100%;
   max-width:120px;
-  background-color: ${props =>  props.backgroundColor || 'white' };
-  color: ${props => props.textColor || black };
+  background-color: ${props => props.backgroundColor || 'white'};
+  color: ${props => props.textColor || black};
   padding:12px 22px;
   margin:0 10px 10px;
   border:none;
@@ -42,6 +42,7 @@ export const Button = styled.button`
 export const Card = styled.div`
   width: 97%;
   max-width:300px;
+  height:100%;
   margin: 20px auto 30px;
   border-radius:4px;
   box-shadow:2px 3px 14px rgba(0,0,0,0.6);
