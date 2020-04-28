@@ -227,6 +227,7 @@ img {
     grid-gap: 10px;
     margin: auto;
     place-items: flex-end;
+    padding-top: 30px;
   }
 
   .search-results-container {
@@ -245,5 +246,9 @@ img {
   .three-col {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .search {
+    background-position: top center;
   }
 }
